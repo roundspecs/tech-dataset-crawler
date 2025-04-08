@@ -109,7 +109,7 @@ with sync_playwright() as p:
         print(
             f"Successfully fetched {len(product_urls)} product URLs from {category_url}."
         )
-        for product_url in product_urls[:2]:
+        for product_url in product_urls:
             details = fetch_product_details(page, product_url)
 
             # TODO: Perhaps we should keep the details even if price is not found
