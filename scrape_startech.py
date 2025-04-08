@@ -46,7 +46,7 @@ def fetch_product_details(page: Page, product_url: str):
     except ValueError:
         print(f"Error converting price to integer: {price_unsanitized}")
         price = None
-    
+
     # Short Description
     short_description_element = page.query_selector("div.short-description")
     short_description = (
@@ -118,10 +118,8 @@ with sync_playwright() as p:
             #     continue
 
             all_product_details.append(details)
-    
+
     print(f"Successfully fetched details for {len(all_product_details)} products.")
     save_dict_list_to_csv("startech_products.csv", all_product_details)
     print("Product details saved to startech_products.csv.")
     browser.close()
-
-
