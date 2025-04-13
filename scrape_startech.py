@@ -96,7 +96,7 @@ def save_dict_list_to_csv(filename: str, data: list[dict[str, Any]]) -> None:
 
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch()
     page = browser.new_page()
 
     category_urls = fetch_category_urls(page)
